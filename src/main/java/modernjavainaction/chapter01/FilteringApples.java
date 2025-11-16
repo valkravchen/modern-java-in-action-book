@@ -1,4 +1,4 @@
-package chapter01;
+package modernjavainaction.chapter01;
 
 import java.util.*;
 import java.util.function.Predicate;

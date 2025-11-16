@@ -1,4 +1,4 @@
-package chapter02;
+package modernjavainaction.chapter02;
 
 import java.util.*;
 
