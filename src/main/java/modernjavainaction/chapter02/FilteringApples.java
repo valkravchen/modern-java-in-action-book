@@ -26,6 +26,8 @@ public class FilteringApples {
             }
         });
         System.out.println(redApples2);
+        List<Apple> redApples3 = filter(inventory, (Apple apple) -> apple.getColor() == Color.RED);
+        System.out.println(redApples3);
         prettyPrintApple(inventory, new AppleFancyFormatter());
         prettyPrintApple(inventory, new AppleSimpleFormatter());
     }
@@ -140,7 +142,7 @@ public class FilteringApples {
             String output = formatter.accept(apple);
             System.out.println(output);
         }
-}
+    }
 
     public interface AppleFormatter {
         String accept(Apple apple);
@@ -155,7 +157,7 @@ public class FilteringApples {
         }
     }
 
-    static class AppleSimpleFormatter implements  AppleFormatter {
+    static class AppleSimpleFormatter implements AppleFormatter {
 
         @Override
         public String accept(Apple apple) {
