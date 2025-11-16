@@ -1,6 +1,7 @@
 package modernjavainaction.chapter02;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class FilteringApples {
 
@@ -13,19 +14,6 @@ public class FilteringApples {
         System.out.println(greenApples);
         List<Apple> redApples = filterApplesByColor(inventory, Color.RED);
         System.out.println(redApples);
-        List<Apple> greenApples2 = filter(inventory, new AppleColorPredicate());
-        System.out.println(greenApples2);
-        List<Apple> heavyApples = filter(inventory, new AppleWeightPredicate());
-        System.out.println(heavyApples);
-        List<Apple> redAndHeavyApples = filter(inventory, new AppleRedAndHeavyPredicate());
-        System.out.println(redAndHeavyApples);
-        List<Apple> redApples2 = filter(inventory, new ApplePredicate() {
-            @Override
-            public boolean test(Apple a) {
-                return a.getColor() == Color.RED;
-            }
-        });
-        System.out.println(redApples2);
         List<Apple> redApples3 = filter(inventory, (Apple apple) -> apple.getColor() == Color.RED);
         System.out.println(redApples3);
         prettyPrintApple(inventory, new AppleFancyFormatter());
@@ -63,15 +51,16 @@ public class FilteringApples {
         return result;
     }
 
-    public static List<Apple> filter(List<Apple> inventory, ApplePredicate predicate) {
-        List<Apple> result = new ArrayList<>();
-        for (Apple apple : inventory) {
-            if (predicate.test(apple)) {
-                result.add(apple);
+    public static <T> List<T> filter(List<T> inventory, Predicate<T> predicate) {
+        List<T> result = new ArrayList<>();
+        for (T element : inventory) {
+            if (predicate.test(element)) {
+                result.add(element);
             }
         }
         return result;
     }
+
 
     enum Color {
         RED,
