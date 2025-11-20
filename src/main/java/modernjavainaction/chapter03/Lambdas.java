@@ -2,6 +2,8 @@ package modernjavainaction.chapter03;
 
 import java.util.*;
 
+import static java.util.Comparator.comparing;
+
 public class Lambdas {
     public static void main(String[] args) {
         Runnable runnable = () -> System.out.println("Hello!");
@@ -12,10 +14,7 @@ public class Lambdas {
                 new Apple(155, Color.GREEN),
                 new Apple(120, Color.RED)
         );
-        List<Apple> greenApples = filter(inventory, (Apple apple) -> apple.getColor() == Color.GREEN);
-        System.out.println(greenApples);
-        Comparator<Apple> comparator = (Apple apple1, Apple apple2) -> apple1.getWeight() - apple2.getWeight();
-        inventory.sort(comparator);
+        inventory.sort(comparing(Apple::getWeight).reversed());
         System.out.println(inventory);
     }
 
