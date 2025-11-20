@@ -5,7 +5,7 @@ import java.util.List;
 import static modernjavainaction.chapter04.Dish.menu;
 
 public class HighCaloriesNames {
-    static void main() {
+    public static void main(String[] args) {
         List<String> names = menu.stream()
                 .filter(dish -> {
                     System.out.println("filtering " + dish.getName());
