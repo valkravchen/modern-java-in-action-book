@@ -58,5 +58,9 @@ public class Filtering {
                 .toList();
         System.out.println("Два первых мясных блюда:");
         meaDishes.forEach(System.out::println);
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+        numbers1.stream()
+                .map(number ->  number * number)
+                .forEach(System.out::println);
     }
 }
