@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 import static modernjavainaction.chapter04.Dish.menu;
 
 public class Mapping {
-    static void main() {
+    public static void main(String[] args) {
         List<String> dishNames = menu.stream()
                 .map(Dish::getName)
                 .toList();

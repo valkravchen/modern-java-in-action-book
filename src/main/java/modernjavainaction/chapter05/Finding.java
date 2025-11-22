@@ -7,7 +7,7 @@ import java.util.Optional;
 import static modernjavainaction.chapter04.Dish.menu;
 
 public class Finding {
-    static void main() {
+    public static void main(String[] args)  {
         if (isVegetarianFriendlyMenu()) {
             System.out.println("Дружелюбный к вегетарианцам");
         }

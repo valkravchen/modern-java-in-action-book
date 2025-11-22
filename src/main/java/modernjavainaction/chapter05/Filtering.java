@@ -7,7 +7,7 @@ import java.util.*;
 import static modernjavainaction.chapter04.Dish.menu;
 
 public class Filtering {
-    static void main() {
+    public static void main(String[] args) {
         System.out.println("Фильтрация с помощью предиката");
         List<Dish> vegetarianMenu = menu.stream()
                 .filter(Dish::isVegetarian)
