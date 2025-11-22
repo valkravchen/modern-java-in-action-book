@@ -10,8 +10,8 @@ public class Filtering {
     static void main() {
         System.out.println("Фильтрация с помощью предиката");
         List<Dish> vegetarianMenu = menu.stream()
-                        .filter(Dish::isVegetarian)
-                                .toList();
+                .filter(Dish::isVegetarian)
+                .toList();
         vegetarianMenu.forEach(System.out::println);
         System.out.println("Фильтрация уникальных элементов:");
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
@@ -60,7 +60,7 @@ public class Filtering {
         meaDishes.forEach(System.out::println);
         List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
         numbers1.stream()
-                .map(number ->  number * number)
+                .map(number -> number * number)
                 .forEach(System.out::println);
     }
 }
